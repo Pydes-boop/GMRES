@@ -1,4 +1,4 @@
-# GMRES for unmatched Matrices A and B
+# GMRES for unmatched Matrices/Projectors A and B
 
 Implementation of GMRES, AB-GMRES and BA-GMRES for unmatched projector/backprojector pairs or Matrices in Python using NumPy. Alternatively using python bindings for elsa tomographic reconstruction library. Basis for elsas GMRES implementations you can find in the [elsa repository](https://gitlab.lrz.de/IP/elsa).
 
