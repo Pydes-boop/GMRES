@@ -4,7 +4,9 @@ Implementation of GMRES, AB-GMRES and BA-GMRES for unmatched projector/backproje
 
 ## General Idea
 
-In this repository 3 different algorithms are implemented. First the basic [GMRES](gmres_numpy/GMRES.py) which solves indefinite, nonsymmetric, square system $Ax = b$. This is a basic Krylov-Subspace solver, which can be expanded by introducing the following expansions to our System $Ax = b$:\
+In this repository 3 different algorithms are implemented. First the basic [GMRES](gmres_numpy/GMRES.py) which solves indefinite, nonsymmetric, square system $Ax = b$. This is a basic Krylov-Subspace solver, which can be expanded by introducing the following expansions to our System $Ax = b$:
+\
+\
 $\min_{z \epsilon \mathbb{R}^{N}} \|b-ABz\|$\
 $\min_{x \epsilon \mathbb{R}^{M}} \|Bb-BAx\|$\
 $x = Bz$\
