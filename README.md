@@ -23,9 +23,30 @@ The GMRES methods show a slighty slower speed compared to solvers like Conjugate
 
 ## Using with elsa - an elegant framework for tomographic reconstruction
 
-Elsa is an open source framework for tomographic reconstruction utilizing features from modern CPP for perfomant results. It can be installed from [here](https://gitlab.lrz.de/IP/elsa) and provides alternatives for solvers as well as a faster GMRES implementation. \
-You can find installation instructions for the python bindings which we will be using in the elsa documentation [https://ciip.in.tum.de/elsadocs/](https://ciip.in.tum.de/elsadocs/guides/python_guide/install.html). To use the unmatched Projectors in elsa you need Cuda and Thrust installed. Sometimes when installing the python bindings it is needed to explicitely give CMAKE a reference to Thrust as it wont find it otherwise on your system. The following example would be a typical installation instruction for your Thrust directory in Ubuntu for Cuda version 11.8, adjust as needed: \
+Elsa is an open source framework for tomographic reconstruction utilizing features from modern CPP for perfomant results. It can be installed from [here](https://gitlab.lrz.de/IP/elsa) and provides alternatives for solvers as well as a faster GMRES implementation.
+You can find current installation instructions for the python bindings which we will be using in the elsa documentation [https://ciip.in.tum.de/elsadocs/](https://ciip.in.tum.de/elsadocs/guides/python_guide/install.html). 
+
 ```
+# Prerequisites
+- C++17 compliant compiler: GCC >= 9 or Clang >= 9
+- CMake >= 3.14
+- CUDA toolkit >= 10.2
+```
+
+```bash
+# install python bindings for elsa
+
+pip install numpy matplotlib scipy
+
+git clone https://gitlab.lrz.de/IP/elsa
+cd elsa
+
+# using the --verbose flag the console output should show you if CUDA is enabled
+
+pip install . --verbose
+
+# sometimes this has difficulty to find CUDAs thrust on your system, try linking your CUDA directory for CMake:
+
 CMAKE_ARGS="-DThrust_DIR=/usr/local/cuda-11.8/targets/x86_64-linux/lib/cmake/thrust" pip install . --verbose
 ```
 
